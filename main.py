@@ -1,6 +1,5 @@
 import random
-from art import logo
-from art import vs
+from art import logo,vs
 from game_data import data
 from replit import clear
 
@@ -26,14 +25,15 @@ score = 0
 while cont == True:
     print(f"Compare A: {name_a['name']}, a {name_a['description']}, from {name_a['country']}")
     print(vs)
-    print(f"Compare B: {name_b['name']}, a {name_b['description']}, from {name_b['country']}")
+    print(f"Against B: {name_b['name']}, a {name_b['description']}, from {name_b['country']}")
     pick_letter = input("Who as more followers? Type 'A' or 'B': ").lower()
     winner(name_a, name_b)
     if pick_letter == win:
         score += 1
         clear()
-        print(f"You're right! Current score: {score}")
         print(logo)
+        print(f"You're right! Current score: {score}")
+        
         name_a = name_b
         name_b = random.choice(data)
     else:
